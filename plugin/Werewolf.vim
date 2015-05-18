@@ -8,9 +8,13 @@ let g:vim_bg_shift_day_end = get(g:, 'vim_bg_shift_day_end', 20)
 
 function! VimBgShift()
 	if strftime("%H") >= g:vim_bg_shift_day_start && strftime("%H") < g:vim_bg_shift_day_end
-		set background=light
+		if &background == 'dark'
+			set background=light
+		endif
 	else
-		set background=dark
+		if &background == 'light'
+			set background=dark
+		endif
 	endif
 endfunction
 
