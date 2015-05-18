@@ -26,5 +26,5 @@ command! VimBgShiftOn let g:vim_bg_shift_change_automatically = 1
 
 augroup vim_bg_shift
 	autocmd!
-	autocmd CursorMoved,CursorHold,CursorHoldI,WinEnter,WinLeave,FocusLost,FocusGained,VimResized,ShellCmdPost * nested call VimBgShift()
+	autocmd BufWritePost * nested call VimBgShift()
 augroup END
