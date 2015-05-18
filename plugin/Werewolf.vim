@@ -8,6 +8,7 @@ let g:werewolf_night_themes = get(g:, 'werewolf_night_themes', [])
 let g:werewolf_day_start = get(g:, 'werewolf_day_start', 8)
 let g:werewolf_day_end = get(g:, 'werewolf_day_end', 20)
 let g:werewolf_change_automatically = get(g:, 'werewolf_change_automatically', 1)
+let g:werewolf_change_background = get(g:, 'werewolf_change_background', 0)
 
 let s:werewolf_autocmd_allowed = 0
 
@@ -34,6 +35,11 @@ function! Werewolf#transform(current, switch)
 		endif
 		let i += 1
 	endwhile
+	if &background == 'light'
+		set background=dark
+	else
+		set background=light
+	endif
 endfunction
 
 function! WerewolfToggle()
