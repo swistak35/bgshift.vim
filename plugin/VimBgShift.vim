@@ -3,8 +3,8 @@
 "" changes background depending on the time of day
 "" by Rafał Łasocha
 
-let g:vim_bg_shift_day_start = get(g:, 'vim_bg_shift_day_start', 8)
-let g:vim_bg_shift_day_end = get(g:, 'vim_bg_shift_day_end', 20)
+let g:vim_bg_shift_day_start = get(g:, 'vim_bg_shift_day_start', 7)
+let g:vim_bg_shift_day_end = get(g:, 'vim_bg_shift_day_end', 21)
 let g:vim_bg_shift_change_automatically = get(g:, 'vim_bg_shift_change_automatically', 1)
 
 function! VimBgShift()
