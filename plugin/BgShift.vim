@@ -27,5 +27,5 @@ command! BgShiftOn let g:bg_shift_change_automatically = 1
 augroup bg_shift
 	autocmd!
 	autocmd BufWritePost * nested call BgShift()
-	autocmd VimEnter call BgShift()
+	autocmd VimEnter * call BgShift()
 augroup END
