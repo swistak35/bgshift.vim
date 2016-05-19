@@ -11,10 +11,12 @@ function! BgShift()
 	if g:bg_shift_change_automatically
 		if strftime("%H") >= g:bg_shift_day_start && strftime("%H") < g:bg_shift_day_end
 			if &background == 'dark'
+				colorscheme flattened_dark
 				set background=light
 			endif
 		else
 			if &background == 'light'
+				colorscheme flattened_light
 				set background=dark
 			endif
 		endif
