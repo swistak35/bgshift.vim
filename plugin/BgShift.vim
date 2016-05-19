@@ -10,15 +10,19 @@ let g:bg_shift_change_automatically = get(g:, 'bg_shift_change_automatically', 1
 function! BgShift()
 	if g:bg_shift_change_automatically
 		if strftime("%H") >= g:bg_shift_day_start && strftime("%H") < g:bg_shift_day_end
-			if &background == 'dark'
-				colorscheme flattened_dark
-				set background=light
-			endif
-		else
 			if &background == 'light'
-				colorscheme flattened_light
 				set background=dark
 			endif
+			if !exists("g:colors_name") || g:colors_name == 'flattened_dark'
+				colorscheme flattened_light
+			end
+		else
+			if &background == 'dark'
+				set background=light
+			endif
+			if !exists("g:colors_name") || g:colors_name == 'flattened_light'
+				colorscheme flattened_dark
+			end
 		endif
 	endif
 endfunction
